@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('MESSAGE')
 args = parser.parse_args()
 
-MESSAGE = str(args.message).upper()
+MESSAGE = str(args.MESSAGE).upper()
 LED_PATH = "/sys/class/leds/tpacpi::lid_logo_dot/brightness"
 LED_ON = '1'
 LED_OFF = '0'
@@ -111,8 +111,7 @@ try:
             elif char == '-':
                 time.sleep(DAH_LENGTH_S)
             elif char == '/':
-                time.sleep(INTRA_CHAR_S)
-            elif char == ' ':
+                off()
                 time.sleep(WORD_S)
 
         IDX += 1
